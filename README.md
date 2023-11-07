@@ -88,3 +88,49 @@ output
 ```
 2
 ```
+
+## 3.Staircase
+ - [Problem](https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](Staircase.c) (navigate to the Solution file)
+  - Explanation:
+  > In this problem, the user inputs a value to variable 'n', we need to complete the 'staircase' function which will prints a staircase using'#' and ' ' whose height and base will be equal to n
+
+``` c program solution
+void staircase(int n) {
+    for (int i = 1; i <= n; i++) {
+        // Print spaces
+        for (int j = 1; j <= n - i; j++) {
+            printf(" ");
+        }
+        
+        // Print #
+        for (int k = 1; k <= i; k++) {
+            printf("#");
+        }
+        
+        // Move to the next line
+        printf("\n");
+    }
+}
+
+```
+### Steps of execution
+1.The program starts by asking the user to input the value 'n' (base and height of staircase).
+
+2.The  function 'staircase' takes the variable 'n' as an argument and print the staircase using '#' and ' ' 
+
+#### Sample input & output
+input
+```
+6 
+```
+output
+```
+     #
+    ##
+   ###
+  ####
+ #####
+######
+```
+
