@@ -355,21 +355,22 @@ output
 
 ### Steps of execution
 
-    1. cumulativeLikes is initialized to 0 to store the cumulative likes received over n days.
+1. cumulativeLikes is initialized to 0 to store the cumulative likes received over n days.
 
-    2. shared is initialized to 5 representing the initial number of people the advertisement is shared with on the first day.
+2. shared is initialized to 5 representing the initial number of people the advertisement is shared with on the first day.
 
-    3. Iterate through the number of days using the variable day.
+3. Iterate through the number of days using the variable day.
 
-    4. For each day, calculate the number of likes received (likes) by dividing the current shared count by 2. Add this to the cumulativeLikes
+4. For each day, calculate the number of likes received (likes) by dividing the current shared count by 2. Add this to the cumulativeLikes
 
-    5. Update the shared count for the next day by multiplying the current likes by 3.
+5. Update the shared count for the next day by multiplying the current likes by 3.
 
-    6. After iterating through all days, cumulativeLikes contains the total number of likes received over n days.
+6. After iterating through all days, cumulativeLikes contains the total number of likes received over n days.
 
-    7. Return the cumulativeLikes as the result, indicating the cumulative number of people who liked the advertisement.
+7. Return the cumulativeLikes as the result, indicating the cumulative number of people who liked the advertisement.
 
-    #### Sample input & output
+
+#### Sample input & output
 input
 ```
 3
@@ -379,4 +380,50 @@ output
 9
 ```
 
-## 8.Viral Advertising
+## 8.Minimum Distances
+- [Problem](https://www.hackerrank.com/challenges/minimum-distances/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](Staircase.c) (navigate to the Solution file)
+  - - Explanation:
+      > The distance between two array values is the number of indices between them. Given a,Complete the 'minimumDistances' function to find the minimum distance between any pair of equal elements in the array. If no such value exists, return -1
+
+``` c program solution
+  int minimumDistances(int a_count, int* a) {
+    int minDistance = a_count; // Initialize with a large value
+
+    // Iterate through each element in the array
+    for (int i = 0; i < a_count; i++) {
+        int currentElement = a[i];
+        
+        // Iterate through the array to find another occurrence of the same element
+        for (int j = i + 1; j < a_count; j++) {
+            if (a[j] == currentElement) {
+                int distance = j - i;
+                if (distance < minDistance) {
+                    minDistance = distance;
+                }
+            }
+        }
+    }
+
+    if (minDistance == a_count) {
+        // No pair of equal elements found
+        return -1;
+    } else {
+        return minDistance;
+    }
+   }
+
+```
+### Steps of execution
+1. Create a dictionary element_indices to store the most recent index of each element encountered in the array a.
+
+2. Initialize the min_distance variable to a large value (float('inf')).
+
+3. Iterate through the array a using enumeration to keep track of the indices.
+
+4. For each element, check if it has been encountered before (num in element_indices). If it has, calculate the distance between the current index and the most recent index where the element was seen (i - element_indices[num]). Update min_distance with the smaller value between the current minimum distance and the calculated distance.
+
+5. Update the most recent index of the current element in the element_indices dictionary.
+
+6. After iterating through the array, if min_distance remains as the initial large value, it means no equal elements were found, so return -1. Otherwise, return the calculated min_distance representing the minimum distance between equal elements.
+
