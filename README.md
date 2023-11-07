@@ -77,3 +77,14 @@ output
 4.The  function 'birthdayCakeCandles' takes the array as an argument and find the count of tallest candle and returns 'count' variable which contains the result value into the main function
 
 5.The result  is then printed at the main function.
+
+#### Sample input & output
+input
+```
+4
+3 2 1 3
+```
+output
+```
+2
+```
