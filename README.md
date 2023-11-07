@@ -43,7 +43,7 @@ output
 ```
 ## 2.Birthday Cake Candles
  - [Problem](https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution]() (navigate to the Solution file)
+  - [Solution](birthdayCakeCandles.c) (navigate to the Solution file)
   - Explanation:
   > In this problem, the user inputs and array of which contains the height of each candles on the cake, we need to complete the 'birthdayCakeCandles' function which gives the count of tallest candle in the array.
 
