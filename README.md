@@ -222,5 +222,161 @@ output
 - [Problem](https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true)(navigate to the Problem)
   - [Solution](Staircase.c) (navigate to the Solution file)
   - Explanation:
-  > In this problem, the user inputs 5 positive integers .We need to complete 'miniMaxSum' to find out the minimum and maximum values that can be calculated by adding any 4 of the 5 integers, and print it
+  > In this problem, there are given the coordinates of a house and the positions of apple and orange trees. We need to complete the function 'countApplesAndOranges' to count the number of apples and oranges that fall within a certain range of the house.
 
+``` c program solution
+
+void countApplesAndOranges(int s, int t, int a, int b, int apples_count, int* apples, int oranges_count, int* oranges) {
+    int apples_on_house = 0;
+    int oranges_on_house = 0;
+
+    // Calculate the position of each apple and check if it falls on the house.
+    for (int i = 0; i < apples_count; i++) {
+        int apple_position = a + apples[i];
+        if (apple_position >= s && apple_position <= t) {
+            apples_on_house++;
+        }
+    }
+
+    // Calculate the position of each orange and check if it falls on the house.
+    for (int i = 0; i < oranges_count; i++) {
+        int orange_position = b + oranges[i];
+        if (orange_position >= s && orange_position <= t) {
+            oranges_on_house++;
+        }
+    }
+
+    // Print the counts of apples and oranges on the house.
+    printf("%d\n%d\n", apples_on_house, oranges_on_house);
+}
+
+```
+### Steps of execution
+
+1.at first we input s ( starting point of Sam's house location.) and t ( ending location of Sam's house location.),then on second line we input a (location of the Apple tree.) and b (location of the Orange tree),the third input line contains m and n,The fourth line contains m space-separated integers denoting the respective distances that each apple falls from point a.The fifth line contains n space-separated integers denoting the respective distances that each orange falls from point b.
+
+2.in function 'countApplesAndOranges' Initialize apple_count and orange_count variables to keep track of the number of apples and oranges within the range s to t.
+
+3. Calculate the actual landing positions of apples and oranges by adding their distances (apples and oranges arrays) to the respective trees (a and b).
+
+4.Iterate through the apple positions and count how many fall within the specified range s to t. Increment apple_count for each apple that falls within the range.
+
+5. Iterate through the orange positions and count how many fall within the specified range [s, t]. Increment orange_count for each orange that falls within the range.
+
+6.Print the counts of apples and oranges that fall within the specified range.
+
+#### Sample input & output
+input
+```
+7 11
+5 15
+3 2
+-2 2 1
+5 -6
+ 
+```
+output
+```
+1
+1
+```
+
+## 6.Electronics Shop
+- [Problem](https://www.hackerrank.com/challenges/electronics-shop/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](Staircase.c) (navigate to the Solution file)
+  - Explanation:
+  > In this problem, A person wants to determine the most expensive computer keyboard and USB drive that can be purchased with a given budget. we want to complete the 'getMoneySpent' function to find the maximum can spent for buying.the inputs are three space-separated integers ,b ,n and m, the budget, the number of keyboard models and the number of USB drive models.
+
+  ``` c program solution
+    int getMoneySpent(int keyboards_count, int* keyboards, int drives_count, int* drives, int b) {
+    int maxSpent = -1; // Initialize with -1 to represent no possible purchase
+    
+    for (int i = 0; i < keyboards_count; i++) {
+        for (int j = 0; j < drives_count; j++) {
+            int totalCost = keyboards[i] + drives[j];
+            
+            // Check if the total cost is within budget and higher than the current maxSpent
+            if (totalCost <= b && totalCost > maxSpent) {
+                maxSpent = totalCost;
+            }
+        }
+    }
+    
+    return maxSpent;
+  }
+  ```
+
+### Steps of execution
+
+1.Initialize max_spent as -1, indicating that it's not possible to purchase both items within the budget.
+
+2.Iterate through all combinations of keyboards and drives using nested loops.
+
+3.For each combination, calculate the total cost (total_cost) by adding the cost of the current keyboard and drive.
+
+4.Check if the total_cost is within budget (total_cost <= b) and if it's greater than the current max_spent. If both conditions are met, update max_spent with the total_cost.
+
+5.After iterating through all combinations, max_spent contains the maximum amount that can be spent on a keyboard and a USB drive within the budget. If no valid combination is found, max_spent remains -1.
+
+6.Return the max_spent value as the result, indicating the maximum amount that can be spent on both items within the budget or -1 if it's not possible.
+
+#### Sample input & output
+input
+```
+10 2 3
+3 1
+5 2 8
+
+```
+output
+```
+9
+```
+## 7.Viral Advertising
+- [Problem](https://www.hackerrank.com/challenges/strange-advertising/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](Staircase.c) (navigate to the Solution file)
+  - - Explanation:
+      > Complete the viralAdvertising function to  determine how many people have liked the ad by the end of a given day, beginning with launch day as day 1.
+
+     ``` c program solution
+    int viralAdvertising(int n) {
+    int shared = 5; // Start with 5 initial recipients
+    int cumulativeLikes = 0;
+
+    for (int day = 1; day <= n; day++) {
+        int likedToday = shared / 2; // Number of people who liked the ad today
+        cumulativeLikes += likedToday;
+        shared = likedToday * 3; // Number of people who will receive the ad tomorrow
+    }
+
+    return cumulativeLikes;
+     }
+  ```
+
+### Steps of execution
+
+    1. cumulativeLikes is initialized to 0 to store the cumulative likes received over n days.
+
+    2. shared is initialized to 5 representing the initial number of people the advertisement is shared with on the first day.
+
+    3. Iterate through the number of days using the variable day.
+
+    4. For each day, calculate the number of likes received (likes) by dividing the current shared count by 2. Add this to the cumulativeLikes
+
+    5. Update the shared count for the next day by multiplying the current likes by 3.
+
+    6. After iterating through all days, cumulativeLikes contains the total number of likes received over n days.
+
+    7. Return the cumulativeLikes as the result, indicating the cumulative number of people who liked the advertisement.
+
+    #### Sample input & output
+input
+```
+3
+```
+output
+```
+9
+```
+
+## 8.Viral Advertising
