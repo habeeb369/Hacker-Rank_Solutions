@@ -4,7 +4,7 @@
 ## 1.Simple Array Sum
 
   - [Problem](https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution]() (navigate to the Solution file)
+  - [Solution](simpleArraySum.c) (navigate to the Solution file)
   - Explanation:
   > In this problem, We have given an array of integers to find its sum.We need to complete the 'simpleArraySum' Function given in the program and it must return the sum of array elements as an integer
 
