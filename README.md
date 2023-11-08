@@ -152,7 +152,7 @@ output
 
 ## 4.Mini-Max Sum
  - [Problem](https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](miniMaxSum.c) (navigate to the Solution file)
   - Explanation:
   > In this problem, the user inputs 5 positive integers .We need to complete 'miniMaxSum' to find out the minimum and maximum values that can be calculated by adding any 4 of the 5 integers, and print it
 
@@ -220,7 +220,7 @@ output
 
 ## 5.Apple and Orange
 - [Problem](https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](ApplesAndOranges.c) (navigate to the Solution file)
   - Explanation:
   > In this problem, there are given the coordinates of a house and the positions of apple and orange trees. We need to complete the function 'countApplesAndOranges' to count the number of apples and oranges that fall within a certain range of the house.
 
@@ -283,7 +283,7 @@ output
 
 ## 6.Electronics Shop
 - [Problem](https://www.hackerrank.com/challenges/electronics-shop/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](ElectronicShop.c) (navigate to the Solution file)
   - Explanation:
   > In this problem, A person wants to determine the most expensive computer keyboard and USB drive that can be purchased with a given budget. we want to complete the 'getMoneySpent' function to find the maximum can spent for buying.the inputs are three space-separated integers ,b ,n and m, the budget, the number of keyboard models and the number of USB drive models.
 
@@ -334,7 +334,7 @@ output
 ```
 ## 7.Viral Advertising
 - [Problem](https://www.hackerrank.com/challenges/strange-advertising/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](ViralAdvertising.c) (navigate to the Solution file)
   - - Explanation:
       > Complete the viralAdvertising function to  determine how many people have liked the ad by the end of a given day, beginning with launch day as day 1.
 
@@ -382,7 +382,7 @@ output
 
 ## 8.Minimum Distances
 - [Problem](https://www.hackerrank.com/challenges/minimum-distances/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](MinimumDistances.c) (navigate to the Solution file)
   - - Explanation:
       > The distance between two array values is the number of indices between them. Given a,Complete the 'minimumDistances' function to find the minimum distance between any pair of equal elements in the array. If no such value exists, return -1
 
@@ -444,7 +444,7 @@ output
 
 ## 9.Grading Students
 - [Problem](https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](GradingStudents.c) (navigate to the Solution file)
   - - Explanation:
       > in this Every student receives a grade in the inclusive range from 0 to 100.Any  less than 40 is a failing grade.we want to Complete the function 'gradingStudents' to automate the rounding process
 
@@ -501,7 +501,7 @@ output
 ```
 ## 10.Diagonal Difference
 - [Problem](https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true)(navigate to the Problem)
-  - [Solution](Staircase.c) (navigate to the Solution file)
+  - [Solution](DiagonalDifference.c) (navigate to the Solution file)
   - - Explanation:
       > in this problem a square matrix is given we want to complete the 'diagonalDifference' function which will return the absolute difference between the sums of its diagonals.
     
