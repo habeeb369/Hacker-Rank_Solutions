@@ -425,6 +425,23 @@ output
 
 5.  After iterating through the array, if min_distance remains as the initial large value, it means no equal elements were found, so return -1. Otherwise, return the calculated min_distance representing the minimum distance between equal elements.
 
+#### Sample input & output
+input
+```
+4
+73
+67
+38
+33
+```
+output
+```
+75
+67
+40
+33
+```
+
 ## 9.Grading Students
 - [Problem](https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true)(navigate to the Problem)
   - [Solution](Staircase.c) (navigate to the Solution file)
@@ -482,7 +499,7 @@ output
 40
 33
 ```
-## 9.Diagonal Difference
+## 10.Diagonal Difference
 - [Problem](https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true)(navigate to the Problem)
   - [Solution](Staircase.c) (navigate to the Solution file)
   - - Explanation:
@@ -526,12 +543,12 @@ int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
 #### Sample input & output
 input
 ```
-3
-11 2 4
-4 5 6
-10 8 -12
+STDIN           Function
+-----           --------
+6               arr[] size n = 6
+7 1 3 4 1 7     arr = [7, 1, 3, 4, 1, 7]
 ```
 output
 ```
-15
+3
 ```
