@@ -415,15 +415,123 @@ output
 
 ```
 ### Steps of execution
-1. Create a dictionary element_indices to store the most recent index of each element encountered in the array a.
+1. Create a array a[] with some integer elements
 
-2. Initialize the min_distance variable to a large value (float('inf')).
+2. Initialize the min_distance variable as the total number of elements in the array
 
-3. Iterate through the array a using enumeration to keep track of the indices.
+3. through nested loop compare each element of the array with the other elements at the array to find the occurence of the same element.
 
-4. For each element, check if it has been encountered before (num in element_indices). If it has, calculate the distance between the current index and the most recent index where the element was seen (i - element_indices[num]). Update min_distance with the smaller value between the current minimum distance and the calculated distance.
+4. if we found any occurence find the distance between them in array ,by counting the array elemnt between them and store it in varable distance,and if it is lesser than minDistance change the value of miinDistance as distance
 
-5. Update the most recent index of the current element in the element_indices dictionary.
+5.  After iterating through the array, if min_distance remains as the initial large value, it means no equal elements were found, so return -1. Otherwise, return the calculated min_distance representing the minimum distance between equal elements.
 
-6. After iterating through the array, if min_distance remains as the initial large value, it means no equal elements were found, so return -1. Otherwise, return the calculated min_distance representing the minimum distance between equal elements.
+## 9.Grading Students
+- [Problem](https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](Staircase.c) (navigate to the Solution file)
+  - - Explanation:
+      > in this Every student receives a grade in the inclusive range from 0 to 100.Any  less than 40 is a failing grade.we want to Complete the function 'gradingStudents' to automate the rounding process
 
+``` c program solution
+  int* gradingStudents(int grades_count, int* grades, int* result_count) {
+    // Allocate memory for the result array.
+    int* result = (int*)malloc(grades_count * sizeof(int));
+    
+    for (int i = 0; i < grades_count; i++) {
+        int grade = grades[i];
+        int nextMultiple = (grade / 5 + 1) * 5; // Calculate the next multiple of 5.
+        
+        // Check if the grade needs rounding.
+        if (grade >= 38 && nextMultiple - grade < 3) {
+            result[i] = nextMultiple; // Round up.
+        } else {
+            result[i] = grade; // No rounding needed.
+        }
+    }
+    
+    // Set the result_count and return the result array.
+    *result_count = grades_count;
+    return result;
+}
+```
+
+### Steps of execution
+
+1. Create an empty arrey called result to store the rounded grades.
+
+2. Iterate through the input grades. For each grade, check if it's less than 38. If it is, add the grade to result without rounding.
+
+3. If the grade is 38 or higher, calculate the next multiple of 5 greater than or equal to the grade.
+
+4. Check if the difference between the next multiple and the grade is less than 3. If it is, round up the grade by using the next multiple of 5. Otherwise, keep the grade unchanged.
+
+5. After iterating through all grades, return the result array, which contains the rounded grades based on the specified rules.
+
+#### Sample input & output
+input
+```
+4
+73
+67
+38
+33
+```
+output
+```
+75
+67
+40
+33
+```
+## 9.Diagonal Difference
+- [Problem](https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](Staircase.c) (navigate to the Solution file)
+  - - Explanation:
+      > in this problem a square matrix is given we want to complete the 'diagonalDifference' function which will return the absolute difference between the sums of its diagonals.
+    
+``` c program solution
+  
+int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
+    int primaryDiagonalSum = 0;
+    int secondaryDiagonalSum = 0;
+
+    // Calculate the sum of the primary diagonal
+    for (int i = 0; i < arr_rows; i++) {
+        primaryDiagonalSum += arr[i][i];
+    }
+
+    // Calculate the sum of the secondary diagonal
+    for (int i = 0; i < arr_rows; i++) {
+        secondaryDiagonalSum += arr[i][arr_rows - 1 - i];
+    }
+
+    // Calculate the absolute difference
+    int absoluteDifference = abs(primaryDiagonalSum - secondaryDiagonalSum);
+
+    return absoluteDifference;
+}
+
+
+```
+      
+### Steps of execution
+
+1. primary_diagonal_sum and secondary_diagonal_sum are initialized to 0 to store the sums of the primary and secondary diagonals, respectively.
+
+2. The function iterates through the rows of the matrix. For each row i, it adds the element at position (i, i) (primary diagonal) to primary_diagonal_sum and the element at position arr[i][arr_rows - 1 - i] (secondary diagonal) to secondary_diagonal_sum.
+
+3. After iterating through the matrix, the function calculates the absolute difference between primary_diagonal_sum and secondary_diagonal_sum.
+
+4. The absolute difference is returned as the result, representing the diagonal difference of the input matrix.
+
+#### Sample input & output
+input
+```
+3
+11 2 4
+4 5 6
+10 8 -12
+```
+output
+```
+15
+```
